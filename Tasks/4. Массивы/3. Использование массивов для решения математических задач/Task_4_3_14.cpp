@@ -2,14 +2,14 @@
 
 using namespace std;
 
-int main()
+int main14()
 {
 	int x;
 	do {
 		setlocale(LC_ALL, "Rus");
 		// »нициализаци€ треугольной матрицы
 		int n, k;
-		cout << "¬ведите n и k (через пробел): ";
+		cout << "¬ведите k и m (через пробел): ";
 		cin >> k >> n;
 		int** p = new int*[n + 1];
 		for (int i = 0; i < (n + 1); i++) {

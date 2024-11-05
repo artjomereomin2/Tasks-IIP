@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+int main14()
 {
 	int x;
 	do {
@@ -80,6 +80,7 @@ int main()
 				cout << endl;
 			}
 		}
+		else cout << endl;
 		// Удаление матрицы
 		for (int i = 0; i < n; i++) {
 			delete[]m[i];

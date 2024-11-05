@@ -18,5 +18,17 @@
     <ClCompile Include="Tasks.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_2.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_7.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_15.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_17.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
