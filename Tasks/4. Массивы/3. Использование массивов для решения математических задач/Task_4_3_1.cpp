@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main2()
+int main1()
 {
 	int x;
 	do {

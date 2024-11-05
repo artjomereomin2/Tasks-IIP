@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+int main8()
 {
 	int x;
 	do {

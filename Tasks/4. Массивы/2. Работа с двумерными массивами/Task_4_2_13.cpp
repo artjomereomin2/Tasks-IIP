@@ -16,11 +16,19 @@ int main13()
 			m[i] = new int[n];
 		}
 		// Ввод значений матрицы
-		cout << "Введите эл-ты матрицы (через пробел, каждая строчка на отдельной строчке)\n";
+		// cout << "Введите эл-ты матрицы (через пробел, каждая строчка на отдельной строчке)\n";
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				cin >> m[i][j];
+				// cin >> m[i][j];
+				m[i][j] = rand() % 10;
 			}
+		}
+		cout << "Матрица:\n";
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				cout << m[i][j] << " ";
+			}
+			cout << endl;
 		}
 		// Изменение матрицы:
 		// 1) Поиск в заштрихованной области минимального чётного эл-та
@@ -28,7 +36,7 @@ int main13()
 		bool is_chot = false;
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				if ((i == j or i == 0 or j == 0 or i == n - 1 or j == n - 1) and m[i][j] < mi) {
+				if ((i >= j or i == 0 or j == n - 1) and m[i][j] < mi) {
 					is_chot = true;
 					i_mi = i;
 					j_mi = j;
@@ -41,7 +49,7 @@ int main13()
 		bool is_nechot = false;
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				if (!(i == j or i == 0 or j == 0 or i == n - 1 or j == n - 1) and m[i][j] > ma) {
+				if (!(i >= j or i == 0 or j == n - 1) and m[i][j] > ma) {
 					is_nechot = true;
 					i_ma = i;
 					j_ma = j;
@@ -53,7 +61,7 @@ int main13()
 		if (not is_chot) {
 			cout << "Нет чётного элемента";
 		}
-		else if (not is_chot) {
+		else if (not is_nechot) {
 			cout << "Нет нечётного элемента";
 		}
 		else {
