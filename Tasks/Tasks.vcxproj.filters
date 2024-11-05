@@ -18,28 +18,16 @@
     <ClCompile Include="Tasks.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="4. Массивы\2. Работа с двумерными массивами\Task_4_2_5.cpp">
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="4. Массивы\2. Работа с двумерными массивами\Task_4_2_8.cpp">
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_7.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="4. Массивы\2. Работа с двумерными массивами\Task_4_2_13.cpp">
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_15.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="4. Массивы\2. Работа с двумерными массивами\Task_4_2_14.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="4. Массивы\2. Работа с двумерными массивами\Task_4_2_17.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="4. Массивы\3. Использование массивов для решения математических задач\Task_4_3_1.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="4. Массивы\3. Использование массивов для решения математических задач\Task_4_3_8.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="4. Массивы\3. Использование массивов для решения математических задач\Task_4_3_14.cpp">
+    <ClCompile Include="4. Массивы\4. Вставка и удаление элементов в одномерном массиве\Task_4_4_17.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

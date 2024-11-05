@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main14_1()
+int main14()
 {
 	int x;
 	do {
