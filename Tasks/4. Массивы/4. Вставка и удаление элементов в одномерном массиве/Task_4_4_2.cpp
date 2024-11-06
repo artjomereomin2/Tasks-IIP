@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main2()
+int main()
 {
 	int d;
 	do {
@@ -13,7 +13,7 @@ int main2()
 		cin >> n;
 		int* m = new int[n];
 		// Ввод эл-ов массива и Х
-		cout << "Введите коэффициенты многочлена:" << endl;
+		cout << "Введите элементы массива:" << endl;
 		for (int i = 0; i < (n); i++) {
 			cin >> m[i];
 		}
