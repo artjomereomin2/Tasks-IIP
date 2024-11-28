@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main20()
+int main()
 {
 	int d;
 	do {

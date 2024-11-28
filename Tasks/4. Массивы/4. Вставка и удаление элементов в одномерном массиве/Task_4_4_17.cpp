@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+int main17()
 {
 	int d;
 	do {
@@ -27,7 +27,7 @@ int main()
 		// все эл-ты после него на 1 вперёд и запоминаем в счётчике этот сдвиг
 		int c = 0;
 		for (int i = 0; i < n + c; i++) {
-			if (m[i] == x) {
+			if (abs(m[i]) % 10 == x) {
 				for (int j = n + c - 1; j >= i; j--) {
 					m[j + 1] = m[j];
 				}
