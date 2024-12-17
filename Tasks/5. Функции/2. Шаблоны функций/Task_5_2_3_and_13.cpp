@@ -47,9 +47,9 @@ X** change_matrix_13(X** matrix, int n, int m, X max_s) { // Изменение матрицы
 	// Поиск максимального эл-а
 	int ind_m;
 	for (int i = 0; i < n; i += 1) {
-		X s = 0;
+		int s = 0;
 		for (int j = 0; j < m; j += 1) {
-			s += matrix[i][j];
+			s += int(matrix[i][j]);
 		}
 		if (s > max_s) {
 			ind_m = i;
@@ -63,7 +63,7 @@ X** change_matrix_13(X** matrix, int n, int m, X max_s) { // Изменение матрицы
 	return matrix;
 }
 
-int main21()
+int main()
 {
 	int x;
 	do {
@@ -76,21 +76,21 @@ int main21()
 		cout << "Введите n и m через пробел: ";
 		cin >> n >> m;
 
-		int i = 0; // int
-		cout << "int\n";
-		int** matrix_int = create_and_paste(i, n, m);
-		if (number == 3) matrix_int = change_matrix_3(matrix_int, n, m);
-		else matrix_int = change_matrix_13(matrix_int, n, m, INT_MIN);
-		cout << "Изменённый массив для int:\n";
-		print_m(matrix_int, n, m);
+		//int i = 0; // int
+		//cout << "int\n";
+		//int** matrix_int = create_and_paste(i, n, m);
+		//if (number == 3) matrix_int = change_matrix_3(matrix_int, n, m);
+		//else matrix_int = change_matrix_13(matrix_int, n, m, INT_MIN);
+		//cout << "Изменённый массив для int:\n";
+		//print_m(matrix_int, n, m);
 
-		double d = 5.0; // double
-		cout << "double\n";
-		double** matrix_double = create_and_paste(d, n, m);
-		if (number == 3) matrix_double = change_matrix_3(matrix_double, n, m);
-		else matrix_double = change_matrix_13(matrix_double, n, m, DBL_MIN);
-		cout << "Изменённый массив для double:\n";
-		print_m(matrix_double, n, m);
+		//double d = 5.0; // double
+		//cout << "double\n";
+		//double** matrix_double = create_and_paste(d, n, m);
+		//if (number == 3) matrix_double = change_matrix_3(matrix_double, n, m);
+		//else matrix_double = change_matrix_13(matrix_double, n, m, DBL_MIN);
+		//cout << "Изменённый массив для double:\n";
+		//print_m(matrix_double, n, m);
 
 		char c = '0'; // char
 		char mi = 0;

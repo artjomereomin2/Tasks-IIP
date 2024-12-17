@@ -1,68 +1,108 @@
 #include <iostream>
-#include <fstream>
-#include <string>
 
-class Student {
+using namespace std;
+
+double eps = 0.000001;
+
+class Treangle {
 private:
-	std::string FIO;
-	int year, count;
-	int* grades;
-	void setPersonality(std::string fio, int y_of_born, int c, int* grad) {
-		FIO = fio;
-		year = y_of_born;
-		count = c;
-		grades = grad;
-	}
+	double x1, y1, x2, y2, x3, y3;
 public:
-	Student(std::string FIO, int year, int count, int* grades) {
-		setPersonality(FIO, year, count, grades);
+	Treangle(double xone, double yone, double xtwo, double ytwo, double xtre, double ytre) {
+		x1 = xone;
+		x2 = xtwo;
+		x3 = xtre;
+		y1 = yone;
+		y2 = ytwo;
+		y3 = ytre;
 	}
-	bool is_session() {
-		bool is_sess = true;
-		for (int i = 0; i < count; i++) {
-			if (grades[i] < 3) {
-				is_sess = false;
-				break;
+	bool is_in(double x, double y) {
+		// 1-2
+		double k = (y1 - y2) / (x1 - x2);
+		double b = y1 - k * x1;
+		if (y3 - k * x3 + b > eps) {
+			if (y - k * x + b < eps) {
+				return false;
 			}
 		}
-		return is_sess;
+		else if (y3 - k * x3 + b < eps * -1) {
+			if (y - k * x + b > eps * -1) {
+				return false;
+			}
+		}
+		// 2-3
+		k = (y2 - y3) * 1.0 / (x2 - x3);
+		b = y2 - k * x2;
+		if (y1 - k * x1 + b > eps) {
+			if (y - k * x + b < eps) {
+				return false;
+			}
+		}
+		else if (y1 - k * x1 + b < eps * -1) {
+			if (y - k * x + b > eps * -1) {
+				return false;
+			}
+		}
+		// 3-1
+		k = (y3 - y1) * 1.0 / (x3 - x1);
+		b = y1 - k * x1;
+		if (y2 - k * x2 + b > eps) {
+			if (y - k * x + b < eps) {
+				return false;
+			}
+		}
+		else if (y2 - k * x2 + b < eps * -1) {
+			if (y - k * x + b > eps * -1) {
+				return false;
+			}
+		}
+		return true;
 	}
 };
 
-int main2_2()
+int main2()
 {
 	int x;
 	do {
 		setlocale(LC_ALL, "Rus");
-		std::ofstream out;
-		int c;
-		std::cout << "Введите количество студентов: ";
-		std::cin >> c;
-		out.open("file.txt");
-		for (int i = 0; i < c; i++) {
-			std::string fio;
-			std::cout << "Введите ФИО:\n";
-			std::cin.get();
-			std::getline(std::cin, fio);
-			int year;
-			std::cout << "Введите год рождения:\n";
-			std::cin >> year;
-			int count;
-			std::cout << "Введите количество оценок и сами оценки (на разных строках):\n";
-			std::cin >> count;
-			int* grades = new int[count];
-			for (int j = 0; j < count; j++) {
-				std::cin >> grades[j];
+		double x1, y1, x2, y2, x3, y3;
+		cout << "Введите координаты вершин треугольника (каждая точка на отдельной строке)" << endl;
+		cin >> x1 >> y1;
+		cin >> x2 >> y2;
+		cin >> x3 >> y3;
+		double l1 = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+		double l2 = sqrt((x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3));
+		double l3 = sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
+		if (-1 * (max(max(l1, l2), l3) - (l1 + l2 + l3 - max(max(l1, l2), l3))) > eps) {
+			Treangle treang(x1, y1, x2, y2, x3, y3);
+			cout << "Введите количество проверяемых точек: ";
+			int n;
+			cin >> n;
+			cout << "Введите точки (каждая на отдельной строке)\n";
+			double* dot = new double[2 * n];
+			double x, y;
+			for (int i = 0; i < n; i++) {
+				dot[2 * i] = dot[2 * i + 1] = DBL_MAX;
+				cin >> x >> y;
+				if (treang.is_in(x, y)) {
+					dot[i] = x;
+					dot[i + 1] = y;
+				}
 			}
-			Student students(fio, year, count, grades);
-			if (students.is_session()) {
-				out << fio << " " << year << std::endl;
+			int c = 0;
+			cout << "Точек внутри треугольника: ";
+			for (int i = 0; i < n; i++) {
+				if (dot[2 * i] != DBL_MAX) {
+					c += 1;
+				}
 			}
+			cout << c << endl;
 		}
-		out.close();
-
-		std::cout << "Введите любое число для продолжения (кроме нуля): ";
-		std::cin >> x;
+		else {
+			cout << "Треугольник вырожденный\n";
+		}
+		cout << "Введите любое число для продолжения (кроме нуля): ";
+		cin >> x;
 	} while (x);
 	return 0;
 }
